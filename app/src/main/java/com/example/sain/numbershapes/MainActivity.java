@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
         boolean isSquare = newNumber.isSquare();
         String message;
 
-        if (isTriangular && !isSquare) {
-            message = "The number is triangular";
-        } else if (!isTriangular && isSquare) {
-            message = "The number is square";
-        } else if (isTriangular && isSquare) {
+        if (isTriangular && isSquare) {
             message = "The number is both triangular and square";
+        } else if (isTriangular) {
+            message = "The number is triangular";
+        } else if (isSquare) {
+            message = "The number is square";
         } else {
             message = "The number is neither triangular nor square";
         }
