@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         int value;
 
         private boolean isTriangular() {
-
             int x = 1;
             int sum = 0;
 
@@ -68,21 +67,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         private boolean isSquare() {
+            double sqrt = Math.sqrt(value);
 
-            int x = 1;
-            int square = 0;
-
-            while (square < value) {
-                square = x * x;
-
-                if (square == value) {
-                    return true;
-                }
-
-                x++;
-            }
-
-            return false;
+            return (sqrt == Math.floor(sqrt));
         }
     }
 }
