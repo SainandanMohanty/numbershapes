@@ -16,15 +16,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         EditText editText = findViewById(R.id.editText);
-        int number = Integer.parseInt(editText.getText().toString());
 
-        if (number > 0) {
-            Number newNumber = new Number();
-            newNumber.value = number;
-
-            output(newNumber);
-        } else {
+        if (editText.getText().toString().isEmpty()) {
             Toast.makeText(this, "Enter an integer greater than zero", Toast.LENGTH_SHORT).show();
+        } else {
+            int number = Integer.parseInt(editText.getText().toString());
+
+            if (number > 0) {
+                Number newNumber = new Number();
+                newNumber.value = number;
+
+                output(newNumber);
+            } else {
+                Toast.makeText(this, "Enter an integer greater than zero", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
